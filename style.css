@@ -1,3 +1,4 @@
+/* reset CSS */
 * {
     margin: 0;
     padding: 0;
@@ -8,8 +9,86 @@
     background: transparent;
 }
 
+/* animations */
+@keyframes fade-in {
+    from {opacity: 0; transform: scale(.7,.7)}
+    to {opacity: 1;}
+}
+
+@-webkit-keyframes fade-in {
+    from {opacity: 0; transform: scale(.7,.7)}
+    to {opacity: 1;}
+}
+
+@-moz-keyframes fade-in {
+    from {opacity: 0; transform: scale(.7,.7)}
+    to {opacity: 1;}
+}
+
+.fade-in-element {
+  animation: fade-in 1.4s;
+  -webkit-animation: fade-in 1.4s;
+  -moz-animation: fade-in 1.4s;
+}
+
+.hidden {
+    opacity: 0;
+  }
+
+/* media queries */
+@media (max-width: 1100px) {
+    .smallnav.responsive {
+        display: block;
+    }
+    .navcontainer {
+        display: none;
+    }
+    body .main {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 800px) {
+    .card .card-title {
+        display: flex;
+        flex-direction: column;
+    }
+    .card .card-title h4 {
+        margin-left: 5px;
+    }
+}
+
+@media (max-width: 700px) {
+    .section .project .card {
+        width: 40%;
+    }
+}
+
+@media (max-width: 400px) {
+    .section .project .card, .section .card {
+        width: 80%;
+    }
+}
+
+.smallnav {
+    display: none;
+    text-align: center;
+    position: fixed;
+    height: 64px;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    background: white;
+}
+
+.slide {
+    display: none;
+}
+/* main style */
 body {
     font-family: 'Raleway', sans-serif;
+    overflow-x: hidden;
 }
 
 hr {
@@ -21,23 +100,74 @@ hr {
     height: 1px;
   }
 
-.section h1, h2, p {
+.section h1, h2 {
     margin: 10px;
 }
 
 .section {
-    height: 100vh;
+    margin-bottom: 30px;
+}
+.section.awards {
+    margin-bottom: 0px; 
+}
+
+.section h2 a {
+    font-size: 35px;
+    font-weight: 100;
+    padding: 12px;
+    display: inline-block;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 90%;
+}
+
+.section .about {
+    margin: 10px;
+    font-size: 18px;
+    line-height: 190%;
+}
+
+blockquote {
+    border-left: 5px solid #795548;
+    color: #795548;
+    font-size: 150%;
+    font-weight: 400;
+    margin: 30px 0;
+    padding-left: 1.5rem;
+}
+
+.item {
+    color: #21375f;
+}
+
+.tech {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.project {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 85%;
+    align-content: center;
 }
 
 .opener {
     height: 100vh;
     background: url('assets/33708951_2054099994852742_6051968284272623616_o.jpg');
+    background-position: 60% 0%;
     color: white;
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 .opener h1 {
-    top: 30%;
-    left: 20%;
+    top: 23%;
+    left: 13%;
     font-size: 2em;
     position: relative;
 }
@@ -46,14 +176,14 @@ hr {
     border-bottom: 3px solid #21375f;
 }
 
-.left {
-    width: 20%;
+.navcontainer {
+    width: 14%;
     float: left;
 }
 
 .main {
     margin-left: 15%;
-    background: #F7F7F7;
+    background:#F7F7F7;
 }
 
 .main h2 {
@@ -67,7 +197,7 @@ hr {
 .nav {
     top: 0;
     left: 0;
-    overflow-x: hidden;
+    overflow: hidden;
     z-index: 1;
     list-style: none;
     position: fixed;
@@ -93,6 +223,7 @@ hr {
 }
 .nav li p {
     font-size: 13px;
+    text-align: center;
 }
 
 
@@ -101,9 +232,19 @@ hr {
     color: rgb(88, 82, 82);
 }
 
+.nav li.section-link {
+    margin-left: 10%;
+}
+
+.nav li.contact-links {
+    line-height: 0.4em;
+    margin-top: 20%;
+}
 
 #contact {
     list-style: none;
+    display: flex;
+    justify-content: space-around;
 } 
 
 #contact li {
@@ -124,10 +265,51 @@ hr {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
+
 .card-title {
     display: flex;
     justify-content: space-between;
     padding: 5px;
+    height: 15%;
+}
+
+.card .card-hover {
+    display:none;
+}
+
+.card:hover .card-hover {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+   
+}
+
+
+.project .card:hover {
+    background: #21375f;
+}
+
+.project .card:hover .card-title {
+    color: white;
+}
+
+.project .card:hover .card-content {
+    display: none;
+}
+
+.project .card .card-title h3{
+    display: inline-block;
+    margin: 0px auto;
+}
+
+.project .card .card-content {
+    text-align: center;
+    padding: 5px;
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .card-title .occupation {
@@ -150,4 +332,23 @@ hr {
 .card-content ul {
     list-style: none;
     padding: 5px;
+}
+
+.card-content ul li{
+    padding: 5px;
+    font-size: 13px;
+
+}
+
+
+.project .card {
+    width: 25%;
+    top: 10%;
+    height: 250px;
+    margin: 3%;
+}
+
+.center {
+    width: 40%;
+    margin: 30px auto;
 }
