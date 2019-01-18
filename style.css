@@ -162,6 +162,7 @@ blockquote {
     height: 100vh;
     background: url('assets/33708951_2054099994852742_6051968284272623616_o.jpg');
     background-position: 60% 0%;
+    background-size: cover;
     color: white;
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
