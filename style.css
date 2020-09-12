@@ -1,3 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
 .container {
     display: flex;
     flex-direction: row;
@@ -5,11 +15,52 @@
 }
 
 .sidebar {
+    position: fixed;
     width: 10%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
+.sidebar-menu {
+    margin-left: 10%; 
+}
+
+.sidebar-section {
+    cursor: pointer;
+    margin: 20px 0;
+}
+
+.section-click {
+    display: flex;
+    flex-direction: row;
+}
+
+.sidebar-section-box {
+    width: 20%;
+    background-color: gray;
+    border-radius: 25%;
+}
+
+.sidebar-section:hover .sidebar-section-box {
+    background-color: black;
+}
+
+.sidebar-section-text {
+    color: white;
+}
+
+.sidebar-section:hover .sidebar-section-text {
+    color: black;
+}
+
+
+
+
+
 .content {
-    margin: 2% 5%;
+    margin: 2% 15%;
     font-size: 26px;
     font-family: 'Slabo 27px', serif;
     width: 80%;
@@ -18,6 +69,10 @@
 .content h1 {
     font-size: 50px;
     margin-bottom: 5%;
+}
+
+.content-section {
+    margin-bottom: 40vh;
 }
 
 a {
@@ -34,15 +89,7 @@ a:hover {
     color: #3d5a8e;
 }
 
-/* * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    font-size: 100%;
-    vertical-align: baseline;
-    background: transparent;
-}
+/* 
 
 @keyframes fade-in {
     from {opacity: 0; transform: scale(.7,.7)}
