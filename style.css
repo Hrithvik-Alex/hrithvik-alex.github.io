@@ -39,7 +39,8 @@
 
 .sidebar-section-box {
     width: 20%;
-    background-color: gray;
+    background-color: #cdcdcd;
+    opacity: 0.6;
     border-radius: 25%;
 }
 
